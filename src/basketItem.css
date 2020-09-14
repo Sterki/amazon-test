@@ -1,0 +1,28 @@
+.basketitem {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+.basketitem > img {
+  object-fit: contain;
+}
+.basketitem__rating {
+  display: flex;
+}
+.basket__buttonremove {
+  text-align: center;
+  margin-top: 2rem;
+}
+.button__remove {
+  background-color: #f0c14b;
+
+  border-radius: 2px;
+  width: 10rem;
+  cursor: pointer;
+  height: 1.5rem;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+}

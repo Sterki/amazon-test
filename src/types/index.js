@@ -1,1 +1,6 @@
 export const ADD_TO_BASKET = "ADD_TO_BASKET";
+export const REMOVE_FROM_BASKET = "REMOVE_FROM_BASKET";
+export const GET_PRODUCT_TO_DELETE = "GET_PRODUCT_TO_DELETE";
+
+export const GET_USER_AUTH = "GET_USER_AUTH";
+export const CLOSE_SESION = "CLOSE_SESION";

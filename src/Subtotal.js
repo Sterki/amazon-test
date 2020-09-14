@@ -4,7 +4,7 @@ import CurrencyFormat from "react-currency-format";
 import { useSelector } from "react-redux";
 
 function Subtotal() {
-  const basket = useSelector((state) => state.basket.basket);
+  const basket = useSelector((state) => state.basket.basketCase);
 
   let total = 0;
   for (let i = 0; i < basket.length; i++) {

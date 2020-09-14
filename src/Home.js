@@ -51,15 +51,7 @@ function Home() {
             rating={3}
           />
         </div>
-        <div className="home__row">
-          <Product
-            id="23568912"
-            title="The lean Starup"
-            price={29.99}
-            image="https://m.media-amazon.com/images/I/510AO7UjVPL._AC_UY218_.jpg"
-            rating={3}
-          />
-        </div>
+
         <div className="home__row">{/*producto*/}</div>
       </div>
     </div>
