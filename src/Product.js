@@ -2,6 +2,7 @@ import React from "react";
 import "./product.css";
 import { addToBasketAction } from "./actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
+import StarIcon from "@material-ui/icons/Star";
 
 function Product({ id, title, image, price, rating }) {
   const dispatch = useDispatch();
@@ -20,7 +21,7 @@ function Product({ id, title, image, price, rating }) {
   return (
     <div className="product">
       <div className="product__info">
-        <p>{title}</p>
+        <p className="product__title">{title}</p>
         <p className="product__price">
           <small>$</small>
           <strong>{price}</strong>
@@ -29,7 +30,9 @@ function Product({ id, title, image, price, rating }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p key={i}>⭐</p>
+              <p key={i}>
+                <StarIcon className="product__star" />
+              </p>
             ))}
         </div>
       </div>

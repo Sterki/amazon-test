@@ -36,3 +36,9 @@
 .product_rating {
   display: flex;
 }
+.product__title {
+  font-weight: bold;
+}
+.product__star {
+  color: rgb(255, 174, 0);
+}

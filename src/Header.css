@@ -15,7 +15,7 @@
   }
 }
 .header__logo {
-  max-width: 8rem;
+  max-width: 7rem;
   padding: 5px;
   object-fit: contain;
   margin: 0 10px;
@@ -50,6 +50,7 @@
 .header__nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header__option {
   display: flex;

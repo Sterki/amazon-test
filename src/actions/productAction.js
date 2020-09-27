@@ -2,6 +2,7 @@ import {
   ADD_TO_BASKET,
   REMOVE_FROM_BASKET,
   GET_PRODUCT_TO_DELETE,
+  EMPTY_BASKET,
 } from "./../types/index";
 
 export function addToBasketAction(items) {
@@ -33,4 +34,13 @@ export function removeProductAction(id) {
 const removeProduct = (id) => ({
   type: REMOVE_FROM_BASKET,
   payload: id,
+});
+
+export function EmptyBasketAction() {
+  return (dispatch) => {
+    dispatch(empyBasket());
+  };
+}
+const empyBasket = () => ({
+  type: EMPTY_BASKET,
 });

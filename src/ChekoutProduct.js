@@ -1,22 +1,20 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./basketItem.css";
+import "./checkproduct.css";
+
 import {
   getProductToDeleteAction,
   removeProductAction,
 } from "./actions/productAction";
-import StarIcon from "@material-ui/icons/Star";
+import { useDispatch, useSelector } from "react-redux";
 
-function BasketItem({ basket }) {
+function ChekoutProduct({ item }) {
   const dispatch = useDispatch();
-
-  const { title, price, rating, image } = basket;
+  const { title, price, rating, image, hideButton } = item;
 
   const productToDelete = (product) => {
     dispatch(getProductToDeleteAction(product));
     dispatch(removeProductAction(product.id));
   };
-
   return (
     <div className="basketitem">
       <div className="basketitem__info">
@@ -29,23 +27,23 @@ function BasketItem({ basket }) {
           {Array(rating)
             .fill()
             .map((_, i) => (
-              <p>
-                <StarIcon className="product__star" />
-              </p>
+              <p>⭐</p>
             ))}
         </div>
       </div>
-      <img src={image} alt="" />
+      <img className="checkoutprocuct__img" src={image} alt="" />
       <div className="basket__buttonremove">
-        <button
-          className="button__remove"
-          onClick={() => productToDelete(basket)}
-        >
-          Remove from basket
-        </button>
+        {hideButton && (
+          <button
+            className="button__remove"
+            onClick={() => productToDelete(item)}
+          >
+            Remove from basket
+          </button>
+        )}
       </div>
     </div>
   );
 }
 
-export default BasketItem;
+export default ChekoutProduct;

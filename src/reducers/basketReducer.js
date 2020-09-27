@@ -2,6 +2,7 @@ import {
   ADD_TO_BASKET,
   REMOVE_FROM_BASKET,
   GET_PRODUCT_TO_DELETE,
+  EMPTY_BASKET,
 } from "./../types/index";
 
 const inisialState = {
@@ -21,12 +22,18 @@ export default function (state = inisialState, action) {
         ...state,
         producttoremove: action.payload,
       };
+    case EMPTY_BASKET:
+      return {
+        ...state,
+        basketCase: [],
+      };
     case REMOVE_FROM_BASKET:
       return {
         ...state,
         basketCase: state.basketCase.filter(
           (basketcase) => basketcase.id !== state.producttoremove.id
         ),
+        producttoremove: null,
       };
     default:
       return state;

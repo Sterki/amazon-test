@@ -10,7 +10,10 @@ import Login from "./Login";
 import Register from "./Register";
 import { auth } from "./firebase";
 import { obtieneUsuarioAuthAction } from "./actions/userAction";
-
+import Payments from "./Payments";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import Orders from "./Orders";
 const AppWrapper = () => {
   return (
     <Provider store={store}>
@@ -18,7 +21,9 @@ const AppWrapper = () => {
     </Provider>
   );
 };
-
+const promise = loadStripe(
+  "pk_test_51HSNCfBzzhlp7ugouT577pZjBSu7BucHFT7Ixrba99VprhrKr2jtGaB8bKcngPBppRsHdUMSGRp6xjizkEInuWZh00EOL57yu5"
+);
 function App() {
   const dispatch = useDispatch();
 
@@ -50,6 +55,16 @@ function App() {
             <Route path="/checkout">
               <Header />
               <Checkout />
+            </Route>
+            <Route path="/payments">
+              <Header />
+              <Elements stripe={promise}>
+                <Payments />
+              </Elements>
+            </Route>
+            <Route path="/orders">
+              <Header />
+              <Orders />
             </Route>
             <Route path="/">
               <Header />

@@ -25,7 +25,7 @@ function Header() {
       <Link to="/">
         <img
           className="header__logo"
-          src="https://images-eu.ssl-images-amazon.com/images/G/03/misc/xsite/logos/a.de_logo_RGB_online_schwarz.jpg"
+          src="https://rdwgroup.com/wp-content/uploads/2013/08/Amazon-800x450-1.jpg"
         />
       </Link>
       <div className="header__search">
@@ -33,7 +33,7 @@ function Header() {
         <SearchIcon className="header_searchIcon" />
       </div>
       <div className="header__nav">
-        <Link to={!user && "/login"}>
+        <Link style={{ textDecoration: "none" }} to={!user && "/login"}>
           <div onClick={handleAuthtentication} className="header__option">
             <span className="header__optionLineOn">
               {user ? user.email : "hellow guest"}
@@ -43,10 +43,12 @@ function Header() {
             </span>
           </div>
         </Link>
-        <div className="header__option">
-          <span className="header__optionLineOn">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
-        </div>
+        <Link style={{ textDecoration: "none" }} to="/orders">
+          <div className="header__option">
+            <span className="header__optionLineOn">Returns</span>
+            <span className="header__optionLineTwo">& Orders</span>
+          </div>
+        </Link>
         <div className="header__option">
           <span className="header__optionLineOn">Your</span>
           <span className="header__optionLineTwo">Prime</span>
